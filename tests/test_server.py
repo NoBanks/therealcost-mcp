@@ -154,7 +154,7 @@ async def test_crypto_trade_cost_hand_case_and_recurring():
     assert r["result"]["recurring"]["yearly_cost"] == 77.87
     q = qs(r["calculator_url"])
     assert q["weekly"] == "25" and q["freq"] == "52" and q["flatFee"] == "1"
-    assert r["go_deeper"]["guides"][0]["title"] == "The Real Cost of Everyday Spending"
+    assert r["go_deeper"]["guides"][0]["title"] == "The Real Cost of Crypto Fees and Taxes"
     assert "note" in r["go_deeper"]
 
 
@@ -192,10 +192,13 @@ async def test_emergency_fund_target_date_in_past_is_error():
 
 async def test_list_guides():
     r = await run("list_guides", {})
-    assert [g["pages"] for g in r["guides"]] == [112, 110, 123]
+    assert [g["pages"] for g in r["guides"]] == [112, 110, 123, 110, 115, 109, 117, 115, 125, 103]
+    assert len({g["title"] for g in r["guides"]}) == 10
     assert all(g["price"] == "$4.99" for g in r["guides"])
     assert all(g["free_sample_chapter"].startswith("https://therealcost.nohumannearby.com/samples/") for g in r["guides"])
     assert r["pricing"]["all_3_guides"] == "$9.98"
+    assert "guides 1-3 only" in r["pricing"]["note"]
+    assert len(r["pricing"]["starter_pack_guides"]) == 3
     assert r["link"] == BOOKS
     assert r["disclaimer"] == DISCLAIMER
     assert "/dl/" not in json.dumps(r)

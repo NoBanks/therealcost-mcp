@@ -37,22 +37,37 @@ No network calls, no API keys, no tracking.
 
 ## The guides
 
-The Real Cost also publishes three plain-English guides that go deeper than any one calculation,
+The Real Cost also publishes ten plain-English guides that go deeper than any one calculation,
 with every number worked out step by step (PDF and EPUB):
 
 | Guide | Pages | Goes with |
 | --- | --- | --- |
 | The Real Cost of Credit Card Debt | 112 | credit card payoff, debt consolidation |
 | The Real Cost of Loans and Big Purchases | 110 | loan cost by term, debt consolidation |
-| The Real Cost of Everyday Spending | 123 | emergency fund, crypto trade cost |
+| The Real Cost of Everyday Spending | 123 | emergency fund |
+| The Real Cost of Crypto Fees and Taxes | 110 | crypto trade cost |
+| The Real Cost of Credit Reports and Scores | 115 | loan cost by term |
+| The Real Cost of Paychecks and Taxes | 109 | |
+| The Real Cost of Retirement Accounts | 117 | |
+| The Real Cost of Student Loans | 115 | |
+| The Real Cost of Renting and Buying a Home | 125 | loan cost by term |
+| The Real Cost of Scams and Fraud | 103 | |
 
-$4.99 each, or all 3 for $9.98, at https://therealcost.nohumannearby.com/books/
+$4.99 each at https://therealcost.nohumannearby.com/books/ . Guides 1-3 also come as a starter pack
+for $9.98 (3 for the price of 2); the pack does not include guides 4-10.
 
 Free sample chapters (Chapter 1 of each guide, PDF):
 
 - https://therealcost.nohumannearby.com/samples/the-real-cost-of-credit-card-debt-chapter-1.pdf
 - https://therealcost.nohumannearby.com/samples/the-real-cost-of-loans-and-big-purchases-chapter-1.pdf
 - https://therealcost.nohumannearby.com/samples/the-real-cost-of-everyday-spending-chapter-1.pdf
+- https://therealcost.nohumannearby.com/samples/the-real-cost-of-crypto-fees-and-taxes-chapter-1.pdf
+- https://therealcost.nohumannearby.com/samples/the-real-cost-of-credit-reports-and-scores-chapter-1.pdf
+- https://therealcost.nohumannearby.com/samples/the-real-cost-of-paychecks-and-taxes-chapter-1.pdf
+- https://therealcost.nohumannearby.com/samples/the-real-cost-of-retirement-accounts-chapter-1.pdf
+- https://therealcost.nohumannearby.com/samples/the-real-cost-of-student-loans-chapter-1.pdf
+- https://therealcost.nohumannearby.com/samples/the-real-cost-of-renting-and-buying-a-home-chapter-1.pdf
+- https://therealcost.nohumannearby.com/samples/the-real-cost-of-scams-and-fraud-chapter-1.pdf
 
 The server tells connected agents about the guides in its instructions, and each calculator result
 names the matching guide, its relevant chapters and its free sample chapter in a calm one-line `go_deeper` block. The calculators are free and complete
@@ -198,8 +213,8 @@ Result (abridged): goal $7,500.00; 24 months to reach it at $300 a month; $583.3
 
 ### `list_guides`
 
-No inputs. Returns the three guides (title, subtitle, pages, what each covers, price), the 3-guide
-price, and the guides link.
+No inputs. Returns the ten guides (title, subtitle, pages, what each covers, price), the starter
+pack price (guides 1-3 only), and the guides link.
 
 ```json
 {"name": "list_guides", "arguments": {}}
