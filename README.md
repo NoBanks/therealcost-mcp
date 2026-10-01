@@ -53,8 +53,9 @@ with every number worked out step by step (PDF and EPUB):
 | The Real Cost of Renting and Buying a Home | 125 | loan cost by term |
 | The Real Cost of Scams and Fraud | 103 | |
 
-$4.99 each at https://therealcost.nohumannearby.com/books/ . Guides 1-3 also come as a starter pack
-for $9.98 (3 for the price of 2); the pack does not include guides 4-10.
+$4.99 each at https://therealcost.nohumannearby.com/books/ . All ten come together as the complete set
+for $24.95 (10 for the price of 5). Guides 1-3 also come as a starter pack for $9.98 (3 for the price
+of 2); the starter pack does not include guides 4-10.
 
 Free sample chapters (Chapter 1 of each guide, PDF):
 
@@ -213,8 +214,9 @@ Result (abridged): goal $7,500.00; 24 months to reach it at $300 a month; $583.3
 
 ### `list_guides`
 
-No inputs. Returns the ten guides (title, subtitle, pages, what each covers, price), the starter
-pack price (guides 1-3 only), and the guides link.
+No inputs. Returns the ten guides (title, subtitle, pages, what each covers, price), the complete
+set ($24.95 for all ten, 10 for the price of 5), the starter pack price (guides 1-3 only), and the
+guides link.
 
 ```json
 {"name": "list_guides", "arguments": {}}

@@ -42,7 +42,7 @@ async def test_list_tools_registers_six_tools():
 
 def test_server_instructions_mention_guides_and_site():
     assert "therealcost.nohumannearby.com" in INSTRUCTIONS
-    assert "$4.99" in INSTRUCTIONS and "$9.98" in INSTRUCTIONS
+    assert "$4.99" in INSTRUCTIONS and "$9.98" in INSTRUCTIONS and "$24.95" in INSTRUCTIONS
     assert BOOKS in INSTRUCTIONS
     assert "not financial advice" in INSTRUCTIONS
     assert S.server.instructions == INSTRUCTIONS
@@ -197,6 +197,10 @@ async def test_list_guides():
     assert all(g["price"] == "$4.99" for g in r["guides"])
     assert all(g["free_sample_chapter"].startswith("https://therealcost.nohumannearby.com/samples/") for g in r["guides"])
     assert r["pricing"]["all_3_guides"] == "$9.98"
+    assert r["pricing"]["complete_set_all_10"] == "$24.95"
+    assert r["complete_set"]["price"] == "$24.95" and "10 for the price of 5" in r["complete_set"]["note"]
+    assert r["complete_set"]["link"] == BOOKS and len(r["complete_set"]["guides"]) == 10
+    assert "buy.stripe.com" not in json.dumps(r)
     assert "guides 1-3 only" in r["pricing"]["note"]
     assert len(r["pricing"]["starter_pack_guides"]) == 3
     assert r["link"] == BOOKS
