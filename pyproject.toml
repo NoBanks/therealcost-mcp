@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "therealcost-mcp"
+version = "0.1.0"
+description = "Free money calculators for AI agents, from The Real Cost (therealcost.nohumannearby.com): credit card payoff, debt consolidation, loan cost by term, crypto trading fees and emergency fund, each with the formula in words and a pre-filled calculator link. Education only."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "The Real Cost by NoBanks Nearby", email = "nobanksnearby@gmail.com" }]
+requires-python = ">=3.10"
+keywords = ["mcp", "model-context-protocol", "personal-finance", "calculator", "credit-card", "debt-consolidation", "loan", "emergency-fund", "crypto-fees", "financial-education", "ai-agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+]
+dependencies = ["mcp>=1.20.0", "pydantic>=2.0.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0", "pytest-asyncio>=0.21.0"]
+
+[project.scripts]
+therealcost-mcp = "therealcost_mcp.server:main_sync"
+
+[project.urls]
+Homepage = "https://therealcost.nohumannearby.com"
+Calculators = "https://therealcost.nohumannearby.com/calculators/"
+Guides = "https://therealcost.nohumannearby.com/books/"
+Repository = "https://github.com/NoBanks/therealcost-mcp"
+
+[tool.hatch.build.targets.wheel]
+packages = ["therealcost_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
